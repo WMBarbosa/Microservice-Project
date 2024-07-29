@@ -12,26 +12,26 @@ public class Worker implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String name;
 
     @Column(name = "daily_income")
     private Double dailyIncome;
 
-    public Worker(){
+    public Worker() {
     }
 
-    public Worker(long id, String name, Double dailyIncome) {
+    public Worker(Long id, String name, Double dailyIncome) {
         this.id = id;
         this.name = name;
         this.dailyIncome = dailyIncome;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,7 +56,7 @@ public class Worker implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Worker worker = (Worker) o;
-        return getId() == worker.getId();
+        return Objects.equals(getId(), worker.getId());
     }
 
     @Override
