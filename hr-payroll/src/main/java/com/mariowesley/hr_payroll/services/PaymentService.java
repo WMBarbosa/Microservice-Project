@@ -4,12 +4,7 @@ import com.mariowesley.hr_payroll.entities.Payment;
 import com.mariowesley.hr_payroll.entities.Worker;
 import com.mariowesley.hr_payroll.feignclients.WorkerFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class PaymentService {
