@@ -53,7 +53,7 @@ public class WorkerResource {
             e.printStackTrace();
         }
 
-        logger.info("PORT = " + env.getProperty("local.server.port"));
+        logger.info("PORT = {}", env.getProperty("local.server.port"));
 
         Worker obj = repository.findById(id).get();
         return ResponseEntity.ok(obj);
