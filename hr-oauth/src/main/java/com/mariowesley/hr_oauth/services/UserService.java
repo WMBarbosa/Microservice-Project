@@ -21,10 +21,10 @@ public class UserService implements UserDetailsService {
     public User findyEmail(String email){
         User user = userFeignClient.findByEmail(email).getBody();
         if(user == null){
-            logger.error("Email not found: " + email);
+            logger.error("Email does not exist: " + email);
             throw new IllegalArgumentException("Email not found");
         }
-        logger.info("Email found: {}", email);
+        logger.info("Email does not exist: {}", email);
         return user;
     }
 
