@@ -21,7 +21,7 @@ public class UserService implements UserDetailsService {
     public User findyEmail(String email){
         User user = userFeignClient.findByEmail(email).getBody();
         if(user == null){
-            logger.error("Email does not exist: " + email);
+            logger.error("Email does not exist: {}", email);
             throw new IllegalArgumentException("Email not found");
         }
         logger.info("Email does not exist: {}", email);
@@ -32,7 +32,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userFeignClient.findByEmail(username).getBody();
         if(user == null){
-            logger.error("Email not found: " + username);
+            logger.error("Email not found: {}", username);
             throw new UsernameNotFoundException("Email not found");
         }
         logger.info("Email found: {}", username);
